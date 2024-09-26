@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WalletWiz</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo svg {
+            width: 50px;
+            height: 50px;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .menu span {
+            height: 4px;
+            width: 30px;
+            background-color: #0d47a1;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d47a1;
+            margin-left: 10px;
+        }
+
+        .logo svg path {
+            fill: url(#grad1);
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            color: #0d47a1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Section Styles */
+        .section {
+            display: none;
+            padding: 20px;
+            background-color: #000000;
+            border-radius: 5px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #0d47a1;
+        }
+
+        .section p {
+            line-height: 1.6;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0d47a1;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #003c8f;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00f;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#0f0;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path d="M32 2L4 12v19c0 16 13 31 28 31s28-15 28-31V12L32 2z"/>
+            </svg>
+            <span class="logo-text">WalletWiz</span>
+        </div>
+
+        <div class="menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown" id="dropdownMenu">
+            <a href="#about-us" onclick="showSection('about-us')">About Us</a>
+            <a href="#privacy-policy" onclick="showSection('privacy-policy')">Privacy Policy</a>
+            <a href="#terms-conditions" onclick="showSection('terms-conditions')">Terms and Conditions</a>
+        </div>
+    </div>
+
+    <!-- Sections for content -->
+    <div id="about-us" class="section">
+        <h2>About Us</h2>
+        <p>Welcome to Walletwiz, where millions of people have found a path to financial stability and success through recovery of lost wallets. Our mission is to empower individuals by providing innovative solutions that help them recover lost wallets and secure their financial future.</p>
+        <p>At Walletwiz, we have developed a unique passkey system that ensures you can recover your lost wallets with ease. Our platform has been a game-changer for countless users, enabling them to regain control over their finances, recover lost wallets, and achieve their goals. Walletwiz can help you earn money and build a stable financial future. We’re here to support you every step of the way.</p>
+        <a class="back-button" onclick="goBack()">Back to Main</a>
+    </div>
+
+    <div id="privacy-policy" class="section">
+        <h2>Privacy Policy</h2>
+        <p>1. Usage Data: We collect information about your interactions with our website, including the pages you visit, the time spent on those pages, and other diagnostic data.</p>
+        <p>2. How We Use Your Information:</p>
+        <ul>
+            <li>Provide and maintain our services</li>
+            <li>Improve and personalize your experience</li>
+            <li>Process transactions and send related information</li>
+            <li>Communicate with you, including sending updates and promotional materials</li>
+            <li>Monitor and analyze usage and trends to improve our services</li>
+        </ul>
+        <p>3. Sharing Your Information: We do not share your personal information with third parties except in the following circumstances:</p>
+        <ul>
+            <li>With your consent</li>
+            <li>To comply with legal obligations</li>
+            <li>To protect and defend our rights and property</li>
+        </ul>
+        <p>4. Security of Your Information: We take reasonable measures to protect your personal information.</p>
+        <a class="back-button" onclick="goBack()">Back to Main</a>
+    </div>
+
+    <div id="terms-conditions" class="section">
+        <h2>Terms and Conditions</h2>
+        <p>1. Introduction: By accessing or using our website, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with these terms, please do not use our website.</p>
+        <p>2. Use of the Website: Eligibility: You must be at least 18 years old to use our services. You are responsible for maintaining the confidentiality of your account information.</p>
+        <p>3. Services Provided: WalletWiz offers a passkey system to help users recover lost wallets. We strive to ensure the accuracy and reliability of our services.</p>
+        <p>4. User Responsibilities: Accurate Information: You agree to provide accurate and complete information when using our services.</p>
+        <a class="back-button" onclick="goBack()">Back to Main</a>
+    </div>
+
+    <script>
+        // Toggle Dropdown Menu
+        function toggleMenu() {
+            var dropdown = document.getElementById("dropdownMenu");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+
+        // Show specific section and hide others
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';  // Hide all sections
+            });
+            document.getElementById(sectionId).style.display = 'block'; // Show selected section
+
+            // Hide dropdown after selection
+            var dropdown = document.getElementById("dropdownMenu");
+            dropdown.style.display = 'none';
+        }
+
+        // Go back to main menu (hide all sections)
+        function goBack() {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';  // Hide all sections
+            });
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu') && !event.target.closest('.menu')) {
+                var dropdown = document.getElementById("dropdownMenu");
+                if (dropdown.style.display === "block") {
+                    dropdown.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html   
+   
+   
+   
+   
+   
+   
+   
+   
+    <head>
+    <!-- Add the JavaScript code here -->
+    <script>
+        window.onload = function() {
+            document.getElementById("popup").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("popup").style.display = "none";
+            }, 3000); // hide the popup after 3 seconds
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Add the HTML code for the pop-up here -->
+    <div id="popup" style="display: none;">
+        <p>Welcome to the world of crypto, where magic happens!</p>
+        <p>Gain financial access and unlock new possibilities!</p>
+    </div>
+
+    <!-- ... rest of your HTML code ... -->
+</body>
+<div id="popup" style="display: none;">
+    <p>Welcome to the world of crypto, where magic happens!</p>
+    <p>Gain financial access and unlock new possibilities!</p>
+</div>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walletwiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 id="header-title">Unlock lost wallet assets with Trust Wallet Passkeys</h1>
+            <p id="header-desc">Extract lost crypto assets, recover lost wallets, and gain total control.</p>
+            <!-- WhatsApp link added to the "Purchase Passkeys" button -->
+            <a href="https://wa.me/+14324478883" class="cta-btn">BUY NOW </a>
+            <!-- Language Section -->
+            <div class="language-select">
+                <select id="language-select" onchange="changeLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+               
+                    <option value="pt">Portuguese</option>
+                   
+                    
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 id="features-title">Why Choose Our Trust Wallet Passkeys?</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3 id="feature-1-title">Ultimate Security</h3>
+                    <p id="feature-1-desc">Non-custodial keys mean only <strong>you</strong> have access to your crypto.</p>
+                </div>
+                <div class="feature">
+                    <h3 id="feature-2-title">Private & Anonymous</h3>
+                    <p id="feature-2-desc">DON'T SHARE YOUR PASSKEY WITH ANYONE. No third-party reliance for asset management.</p>
+                </div>
+                <div class="feature">
+                    <h3 id="feature-3-title">Multi-Blockchain Support</h3>
+                    <p id="feature-3-desc">Effortlessly access assets across different blockchains.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 id="benefits-title">What You Get with Our Passkeys</h2>
+            <ul>
+                <li id="benefit-1">Easy Setup: Quick activation for immediate access.</li>
+                <li id="benefit-2">Lifetime Use: One-time purchase for continuous protection and retrieval.</li>
+                <li id="benefit-3">Reliable Support: 24/7 customer service for assistance.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Importance Section -->
+    <section id="why-matters" class="why-matters">
+        <div class="container">
+            <h2 id="importance-title">Why the trust wallet passkeys Matters </h2>
+            <p id="importance-desc">It is simply a key to financial freedom,gain Access to lost wallets and trade securely, and enjoy peace of mind with a tool trusted by millions.</p>
+        </div>
+    </section>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Offer Section -->
+    <section id="offer" class="offer">
+        <div class="container">
+            <h2 id="offer-title">Limited Time Offer</h2>
+            <p id="offer-desc">Exclusive Discount: Get <strong>10% off</strong> your first purchase today! Money-Back Guarantee: Risk-free and satisfaction guaranteed.</p>
+        </div>
+    </section>
+    <link rel="stylesheet" href="style.css">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="purchase" class="footer">
+        <div class="container">
+            <h2 id="footer-title">Ready to Recover Your Assets?</h2>
+        </div>
+    </footer>
+
+    <!-- External Stylesheet Link -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JavaScript Code -->
+    <script>
+        const languageSelect = document.getElementById('language-select');
+        const elementsToTranslate = document.querySelectorAll('[id]');
+
+        const translations = {
+            en: {
+                'header-title': 'Unlock Your Crypto Freedom with Trust Wallet Passkeys',
+                'header-desc': 'Secure your assets, recover lost wallets, and gain total control.',
+                'features-title': 'Why Choose Our Trust Wallet Passkeys?',
+                'feature-1-title': 'Ultimate Security',
+                'feature-1-desc': 'Non-custodial keys mean only <strong>you</strong> have access to your crypto.',
+                'feature-2-title': 'Private & Anonymous',
+                'feature-2-desc': 'DON\'T SHARE YOUR PASSKEY WITH ANYONE. No third-party reliance for asset management.',
+                'feature-3-title': 'Multi-Blockchain Support',
+                'feature-3-desc': 'Effortlessly access assets across different blockchains.',
+                'benefits-title': 'What You Get with Our Passkeys',
+                'benefit-1': 'Easy Setup: Quick activation for immediate access.',
+                'benefit-2': 'Lifetime Use: One-time purchase for continuous protection and retrieval.',
+                'benefit-3': 'Reliable Support: 24/7 customer service for assistance.',
+                'importance-title': 'Why It Matters',
+                'importance-desc': 'Protect yourself from crypto theft, gain freedom to trade securely, and enjoy peace of mind with a tool trusted by millions.',
+                'offer-title': 'Limited Time Offer',
+                'offer-desc': 'Exclusive Discount: Get <strong>10% off</strong> your first purchase today! Money-Back Guarantee: Risk-free and satisfaction guaranteed.',
+                'comments-title': 'What Our Customers Are Saying',
+                'comment-1-title': 'John D.',
+                'comment-1-desc': '"Trust Wallet Passkeys have completely transformed the way I manage my crypto assets. I no longer worry about losing access to my investments."',
+                'comment-2-title': 'Michael S.',
+                'comment-2-desc': '"This is hands down the best decision I\'ve made for securing my digital assets. The passkeys are easy to use and give me total peace of mind."',
+                'comment-3-title': 'Sarah L.',
+                'comment-3-desc': '"I used to fear losing my crypto wallet, but with Trust Wallet Passkeys, I now have full control over my assets. It\'s a life-changing tool for me."',
+                'comment-4-title': 'Emily R.',
+                'comment-4-desc': '"Trust Wallet Passkeys helped me regain control of my lost wallet. Now, I can trade confidently knowing my assets are secure and accessible only by me."',
+                'footer-title': 'Ready to Recover Your Assets?'
+            },
+            es: {
+                'header-title': 'Desbloquea tu libertad criptográfica con Trust Wallet Passkeys',
+                'header-desc': 'Protege tus activos, recupera billeteras perdidas y obtiene control total.',
+                'features-title': '¿Por qué elegir nuestros Trust Wallet Passkeys?',
+                'feature-1-title': 'Seguridad Última',
+                'feature-1-desc': 'Claves no custodiales significan que solo <strong>tú</strong> tienes acceso a tu cripto.',
+                'feature-2-title': 'Privacidad y Anonimato',
+                'feature-2-desc': 'NO COMPARTAS TU PASSKEY CON NADIE. No hay dependencia de terceros para la gestión de activos.',
+                'feature-3-title': 'Soporte Multi-Blockchain',
+                'feature-3-desc': 'Accede a activos en diferentes blockchains de forma fácil.',
+                'benefits-title': 'Lo que obtienes con nuestros Passkeys',
+                'benefit-1': 'Configuración Fácil: Activación rápida para acceso inmediato.',
+                'benefit-2': 'Uso de Por Vida: Compra única para protección y recuperación continua.',
+                'benefit-3': 'Soporte Confiable: Servicio al cliente 24/7 para asistencia.',
+                'importance-title': 'Por qué Importa',
+                'importance-desc': 'Protege tus activos criptográficos, gana libertad para comerciar de forma segura y disfruta de la paz de mente con una herramienta confiable por millones.',
+                'offer-title': 'Oferta Limitada',
+                'offer-desc': 'Descuento Exclusivo: Obtenga <strong>10% de descuento</strong> en su primera compra hoy! Garantía de Satisfacción: Riesgo libre y garantizado.',
+                'comments-title': 'Lo que nuestros clientes están diciendo',
+                'comment-1-title': 'John D.',
+                'comment-1-desc': '"Trust Wallet Passkeys han transformado completamente la forma en que manejo mis activos criptográficos. Ya no me preocupo por perder acceso a mis inversiones."',
+                'comment-2-title': 'Michael S.',
+                'comment-2-desc': '"Esta es la mejor decisión que he tomado para asegurar mis activos digitales. Los passkeys son fáciles de usar y me dan total paz de mente."',
+                'comment-3-title': 'Sarah L.',
+                'comment-3-desc': '"Solía temer perder mi billetera criptográfica, pero con Trust Wallet Passkeys, ahora tengo control total sobre mis activos. Es una herramienta que cambia la vida para mí."',
+                'comment-4-title': 'Emily R.',
+                'comment-4-desc': '"Trust Wallet Passkeys me ayudó a recuperar el control de mi billetera perdida. Ahora puedo comerciar con confianza sabiendo que mis activos están seguros y accesibles solo por mí."',
+                'footer-title': '¿Listo para recuperar tus activos?'
+            },
+            zh: {
+                'header-title': '',
+                'header-desc': '',
+                'features-title': '',
+                'feature-1-title': '',
+                'feature-1-desc': '',
+                'feature-2-title': '',
+                'feature-2-desc': '',
+                'feature-3-title': '',
+                'feature-3-desc': '',
+                'benefits-title': '',
+                'benefit-1': '',
+                'benefit-2': '',
+                'benefit-3': '',
+                'importance-title': '',
+                'importance-desc': '',
+                'offer-title': '',
+                'offer-desc': '',
+                'comments-title': '',
+                'comment-1-title': '',
+                'comment-1-desc': '',
+                'comment-2-title': '',
+                'comment-2-desc': '',
+                'comment-3-title': '',
+                'comment-3-desc': '',
+                'comment-4-title': '
+                'footer-title': ''
+            }
+        };
+
+        function changeLanguage(language) {
+            elementsToTranslate.forEach((element) => {
+                const elementId = element.id;
+                const translation = translations[language][elementId];
+                if (translation) {
+                    element.innerText = translation;
+                }
+            });
+        }
+
+        languageSelect.addEventListener('change', (event) => {
+            changeLanguage(event.target.value);
+        });
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!-- Statistics Section (Added from second code block) -->
+    <section id="statistics" class="dashboard">
+        <div class="container">
+            <!-- Processed total -->
+            <div class="stat-box">
+                <img src="https://via.placeholder.com/50x50?text=∑" alt="Processed Total Icon">
+                <h2>11,189,673</h2>
+                <p>Total Passkeys processed</p>
+            </div>
+
+            <div class="separator"></div>
+
+            <!-- Processed in last 24h -->
+            <div class="stat-box">
+                <img src="https://via.placeholder.com/50x50?text=24h" alt="Processed in last 24h Icon">
+                <h2>31,260</h2>
+                <p>Passkeys Processed in last 24h</p>
+            </div>
+
+            <div class="separator"></div>
+
+            <!-- Visitors in last 24h -->
+            <div class="stat-box">
+                <img src="https://via.placeholder.com/50x50?text=👥" alt="Visitors Icon">
+                <h2>16,943</h2>
+                <p>Visitors in last 24h</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="purchase" class="footer">
+        <div class="container">
+            <h2 id="footer-title">Ready to Recover Your Assets?</h2>
+        </div>
+    </footer>
+
+    <!-- Comments Section (Integrated from second code block) -->
+    <section id="comments" class="comments">
+        <div class="container">
+            <h2 id="comments-title">What Our Customers Are Saying</h2>
+            <div class="comment-grid">
+                <div class="comment">
+                    <div class="commenter-picture">
+                        <img src="https://picsum.photos/100/100" alt="John D." class="circle-picture">
+                    </div>
+                    <h3 id="comment-1-title">John D.</h3>
+                    <p id="comment-1-desc">"Trust Wallet Passkeys have completely transformed the way I manage my crypto assets."</p>
+                </div>
+                <div class="comment">
+                    <div class="commenter-picture">
+                        <img src="https://picsum.photos/100/101" alt="Michael S." class="circle-picture">
+                    </div>
+                    <h3 id="comment-2-title">Michael S.</h3>
+                    <p id="comment-2-desc">"This is hands down the best decision I've made for securing my digital assets."</p>
+                </div>
+                <div class="comment">
+                    <div class="commenter-picture">
+                        <img src="https://picsum.photos/100/102" alt="Sarah L." class="circle-picture">
+                    </div>
+                    <h3 id="comment-3-title">Sarah L.</h3>
+                    <p id="comment-3-desc">"I used to fear losing my crypto wallet, but now I have full control over my assets."</p>
+                </div>
+                
+
+
+</head>
+<body>
+<div class="video-container">
+    <video id="myVideo">
+        <source src="trust/trust.mp4" type="video/mp4">
+       
+    </video>
+
+    <!-- Central play button -->
+    <button id="centerPlayBtn" class="play-button">▶</button>
+
+    <!-- Video controls -->
+    <div class="controls" id="controls">
+        <button class="control-btn" id="rewind">⏪</button>
+        <button class="control-btn" id="playPause">⏸</button>
+        <button class="control-btn" id="forward">⏩</button>
+
+        <div class="progress-bar">
+            <input type="range" id="progress" value="0" max="100">
+        </div>
+
+        <span class="time-display" id="currentTime">0:00</span>
+        <span class="time-display"> / </span>
+        <span class="time-display" id="duration">0:00</span>
+
+        <button class="control-btn" id="fullscreen">⛶</button>
+    </div>
+</div>
+
+<script>
+    const video = document.getElementById('myVideo');
+    const playPauseBtn = document.getElementById('playPause');
+    const centerPlayBtn = document.getElementById('centerPlayBtn');
+    const rewindBtn = document.getElementById('rewind');
+    const forwardBtn = document.getElementById('forward');
+    const progress = document.getElementById('progress');
+    const currentTimeElem = document.getElementById('currentTime');
+    const durationElem = document.getElementById('duration');
+    const fullscreenBtn = document.getElementById('fullscreen');
+    const controls = document.getElementById('controls');
+    
+    let controlsVisible = true;
+    let timeout;
+
+    // Play or pause the video
+    function togglePlayPause() {
+        if (video.paused) {
+            video.play();
+            playPauseBtn.textContent = '⏸'; // Change to pause icon
+            centerPlayBtn.style.display = 'none'; // Hide center button
+        } else {
+            video.pause();
+            playPauseBtn.textContent = '▶'; // Change to play icon
+            centerPlayBtn.style.display = 'block'; // Show center button
+        }
+    }
+
+    // Update progress bar
+    function updateProgress() {
+        const value = (100 / video.duration) * video.currentTime;
+        progress.value = value;
+        currentTimeElem.textContent = formatTime(video.currentTime);
+        durationElem.textContent = formatTime(video.duration);
+    }
+
+    // Format time as mm:ss
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    // Show or hide controls
+    function toggleControls() {
+        controlsVisible = !controlsVisible;
+        if (controlsVisible) {
+            controls.classList.remove('controls-hidden');
+        } else {
+            controls.classList.add('controls-hidden');
+        }
+    }
+
+    // Hide controls after a delay
+    function hideControlsAfterDelay() {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            controls.classList.add('controls-hidden');
+        }, 3000);
+    }
+      // Event listeners
+    video.addEventListener('click', togglePlayPause);
+    playPauseBtn.addEventListener('click', togglePlayPause);
+    centerPlayBtn.addEventListener('click', togglePlayPause);
+
+    video.addEventListener('timeupdate', updateProgress);
+    progress.addEventListener('input', function () {
+        video.currentTime = (progress.value / 100) * video.duration;
+    });
+
+    rewindBtn.addEventListener('click', () => {
+        video.currentTime -= 10;
+    });
+
+    forwardBtn.addEventListener('click', () => {
+        video.currentTime += 10;
+    });
+
+    fullscreenBtn.addEventListener('click', () => {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) { /* Firefox */
+            video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { /* IE/Edge */
+            video.msRequestFullscreen();
+        }
+    });
+
+    // Show controls when the video is played/paused
+    video.addEventListener('play', hideControlsAfterDelay);
+    video.addEventListener('pause', () => {
+        clearTimeout(timeout);
+        controls.classList.remove('controls-hidden');
+    });
+    
+    video.addEventListener('mousemove', () => {
+        controls.classList.remove('controls-hidden');
+        hideControlsAfterDelay();
+    });
+
+    // Set initial video duration once metadata is loaded
+    video.addEventListener('loadedmetadata', function () {
+        durationElem.textContent = formatTime(video.duration);
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<i><b><h5> © 2015 WalletWiz. All rights reserved.
+
+All content on this website, including text, graphics, logos, and images, is the property of WalletWiz and is protected by international copyright laws. Unauthorized use, reproduction, or distribution of this content is strictly prohibited without prior written permission from WalletWiz.
+</h5></b></i>
+
+</body>
+</html>
+
+
+
